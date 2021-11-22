@@ -102,7 +102,7 @@ export default {
       },
       borderRadius: {
          type: String,
-         default: '30px'
+         default: '10px'
       }
    },
    data() {
