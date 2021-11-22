@@ -1,5 +1,7 @@
 # Carousel  走马灯
 
+> bannerData 每一项至少需要一项 imageUrl 属性
+
 ## Carousel	Attributes
 
 | 参数         | 说明                     | 类型    | 默认值           |
@@ -19,4 +21,19 @@
 | ------------- | -------------------------- | -------------------------------------- |
 | change        | 轮播图切换时触发           | 当前轮播图索引，对应索引位置的数据对象 |
 | headItemClick | 点击轮播图最上层图片时触发 | 事件对象，对应索引位置的数据对象       |
+
+## Carousel slot
+
+**设置了一个默认的作用域插槽**
+
+**以防每一项的最上面还需要加一些元素**
+
+```vue
+// 可以通过默认独占插槽中的 item 属性获取对应数据对象
+// 数据对象为 bannerData 中的各项
+<Carousel v-slot="slotProps">
+    // exmple
+	<span>{{ slotProps.item.title }}</span>
+</Carousel>
+```
 

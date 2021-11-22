@@ -8,21 +8,21 @@
    >
       <ul class="img-container" @click="handleBannerClick">
          <li 
-            v-for="(img, index) in bannerData"
+            v-for="(item, index) in bannerData"
             :key="index"
             :index="index"
-            :data-id="img.targetId"
+            :data-id="item.targetId"
             class="imgLi"
-            :class="img.currClass"
+            :class="item.currClass"
          >
             <div class="imgWrap">
                <img 
                   draggable="false"
-                  :data-class="img.currClass"
-                  :src="img.imageUrl"
+                  :data-class="item.currClass"
+                  :src="item.imageUrl"
                   :style="{ borderRadius }"
                />
-               <slot :item="img"></slot>
+               <slot :item="item"></slot>
             </div>
          </li>
       </ul>
